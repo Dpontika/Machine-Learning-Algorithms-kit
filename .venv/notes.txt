@@ -1,0 +1,5 @@
+1st step:
+    Implementing the Perceptron algorithm for classifying points in a 2D plane
+        - Creating the synthetic 2D datasets
+
+
