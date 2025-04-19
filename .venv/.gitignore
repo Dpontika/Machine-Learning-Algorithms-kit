@@ -1,0 +1,13 @@
+#The .gitignore file you've provided is used to specify which files and directories Git should ignore in your project.
+#This is useful for keeping your repository clean and avoiding the inclusion of unnecessary or sensitive files.
+
+#PyCharm
+# PyCharm
+.idea/
+__pycache__/
+
+# Virtual environment
+.venv/
+
+# Outputs
+outputs/
