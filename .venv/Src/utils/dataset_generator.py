@@ -1,9 +1,9 @@
  """ 
- This module generates four distinct 2D datasets with different separation characteristics:
-    Linearly separable (Case a)
-    Non-linear (angle) (Case b)
-    Non-linear (center) (Case c)
-    Non-linear (XOR) (Case d)
+ This module generates four distinct 2D datasets and two 3D dataset with different separation characteristics:
+    Linearly separable (Case a) for 2D & 3D dataset
+    Non-linear (angle) (Case b) for 2D dataset
+    Non-linear (center) (Case c) for 2D dataset
+    Non-linear (XOR) (Case d) or 2D & 3D dataset
     Each function returns (X_train, X_test, y_train, y_test) for immediate use in training/testing.
     
 """
@@ -11,8 +11,8 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-#Case a: Linearly separable data
-def generate_linear_separable(n=100):
+#Case a: Linearly separable 2D data
+def generate_2D_linear_separable(n=100):
     np.random.seed(42)
 
     #Class 0: Bottom-left quadrant x-range: [0.0, 0.3] y-range: [0.0, 0.3]
@@ -22,15 +22,29 @@ def generate_linear_separable(n=100):
 
     #Vertically stacks the arrays class0 and class1 to create a single array X containing all the data points
     X=np.vstack((class0, class1))
-    #Create  NumPy array of labels for the data points.
     # The first n//2 elements as zeros (representing Class 0).
     # The next n//2 elements as ones (representing Class 1).
     y=np.array([0]*(n//2) + [1]*(n//2))
 
     return train_test_split(X, y, test_size=0.2, random_state=42)
 
-#Case b: Non-linear (angle)
-def generate_nonlinear_angle(n=100):
+#Linearly seperable 3D data
+def generate_3D_linear_seperable(n=100):
+    np.random(seed=42)
+
+    #Class 0: Bottom-left cube: x-range: [0.0, 0.3] y-range: [0.0, 0.3] z-range: [0.0, 0.3]
+    class0 = np.random.uniform(low=[0.0, 0.0, 0.0], high=[0.3,0.3,0.3], size=(n//2,3))
+    #Class 1: Top-right cube: x-range: [0.7, 0.9] y-range: [0.7, 0.9] z-range: [0.7, 0.9]
+    class1 = np.random.uniform(low=[0.7, 0.7, 0.7], high=[0.9, 0.9, 0.9], size=(n//2,3))
+
+    X = np.vstack((class0, class1))
+    y = np.array([0]*(n//2) + [1]*(n//2))
+
+    return train_test_split(X, y, test_size=0.2, random_state=42)
+
+
+#Case b: Non-linear 2D (angle)
+def generate_2D_nonlinear_angle(n=100):
     np.random.seed(42)
 
     #Class 0: Bottom-left quadrant x-range: [0.0, 0.3] y-range: [0.0, 0.3]
@@ -47,8 +61,8 @@ def generate_nonlinear_angle(n=100):
 
     return train_test_split(X, y, test_size=0.2, random_state=42)
 
-#Case c: Non-linear (center). This creates a non-linearly separable pattern where class 0 is completely surrounded by class 1.
- def generate_nonlinear_center(n=100):
+#Case c: Non-linear 2D (center). This creates a non-linearly separable pattern where class 0 is completely surrounded by class 1.
+ def generate_2D_nonlinear_center(n=100):
      np.random.seed(42)
 
      # Class 0: Center square [0.4-0.6] x [0.4-0.6]
@@ -65,8 +79,8 @@ def generate_nonlinear_angle(n=100):
 
      return train_test_split(X, y, test_size=0.2, random_state=42)
 
-#Case d: Non-linear (XOR)
- def generate_nonlinear_xor(n=100):
+#Case d: Non-linear 2D (XOR)
+ def generate_2D_nonlinear_xor(n=100):
      # Class 0: Bottom-left + Top-right
      class0_part1 = np.random.uniform(low=[0.0, 0.0], high=[0.3, 0.3], size=(n // 4, 2))
      class0_part2 = np.random.uniform(low=[0.7, 0.7], high=[0.9, 0.9], size=(n // 4, 2))
@@ -79,6 +93,23 @@ def generate_nonlinear_angle(n=100):
      y = np.array([0] * (n // 2) + [1] * (n // 2))
 
      return train_test_split(X, y, test_size=0.2, random_state=42)
+
+ #Non-linear 3D (XOR)
+ def generate_3D_nonlinear_xor(n=100):
+     np.random.seed(42)
+
+     # Class 0: cube at origin corner and opposite corner
+     class0_part1 = np.random.uniform(low=[0.0, 0.0, 0.0], high=[0.3, 0.3, 0.3], size=(n // 4, 3))
+     class0_part2 = np.random.uniform(low=[0.7, 0.7, 0.7], high=[0.9, 0.9, 0.9], size=(n // 4, 3))
+     # Class 1: XOR cubes
+     class1_part1 = np.random.uniform(low=[0.7, 0.7, 0.0], high=[0.9, 0.9, 0.3], size=(n // 4, 3))
+     class1_part2 = np.random.uniform(low=[0.0, 0.0, 0.7], high=[0.3, 0.3, 0.9], size=(n // 4, 3))
+
+     X = np.vstack((class0_part1, class0_part2, class1_part1, class1_part2))
+     y = np.array([0] * (n // 2) + [1] * (n // 2))
+
+     return train_test_split(X, y, test_size=0.2, random_state=42)
+
 
 
 
