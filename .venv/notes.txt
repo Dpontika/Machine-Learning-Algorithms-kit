@@ -1,30 +1,3 @@
-1st step:
-    Implementing the Perceptron algorithm for classifying points in a 2D plane
-        - Creating the synthetic 2D datasets (dataset_generator.py)
-
-          * Four functions, one for each case. In each function we set np.random.seed(42)
-            to ensure reproducibility. This means that every time we run this function,
-            we will get the same random numbers, which is useful for debugging and testing.
-
-          * We create two classes (0,1) with np.random.uniform. The NumPy random.uniform()
-            function is used to generate arrays filled with random samples from a uniform
-            distribution. Uniform distribution is a probability-related distribution. This
-            function returns the samples that are uniformly distributed over the given inter-
-            vals of low and high. In uniform samples result, it includes low but excludes high.
-
-          * Then we use numpy.vstack() to vertically stack the arrays (class0,class1) to create
-            a single array X containing all the data points.
-
-          * Later, we use np.array to create NumPy array of labels for the data points. Fors exa-
-            mple, in Case a, the first n//2 elements as zeros (representing Class 0).The next n//2
-            elements as ones (representing Class 1).
-
-          * We split the data into training and testing sets (20% of the data for testing, 80% for
-            training)
-
-
-
-
-
-
-
+* Add GUI
+* Add more choices for activation function (perceptron.py - def activate)
+* Add unit tests
