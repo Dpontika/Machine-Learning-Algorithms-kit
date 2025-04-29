@@ -12,19 +12,6 @@
    input_dim : int
        The number of input dimensions (excluding the bias term).
 
-    Methods:
-   --------
-   __init__(input_dim, activation='step'):
-       Initializes the Perceptron with the specified input dimensions and activation function.
-   activate(x):
-       Applies the specified activation function to the input x.
-   predict(x):
-       Predicts the label for the input x using the current weights and activation function.
-   fit(X_train, y_train, epochs=100, lr=0.1):
-       Trains the Perceptron for a specified number of epochs and learning rate.
-   recall(X_test, y_test):
-       Evaluates the trained Perceptron and calculates the accuracy of the predictions.
-
     """
 
 import numpy as np
@@ -142,7 +129,7 @@ class Perceptron:
 # perceptron = Perceptron(input_dim=3, activation='sign')
 #
 # # Train the Perceptron
-# perceptron.train(X_train, y_train, epochs=5, lr=0.1)
+# perceptron.train(X_train, y_train, epochs=2, lr=0.1)
 #
 # # Evaluate the Perceptron
 # predictions, accuracy = perceptron.recall(X_test, y_test)
