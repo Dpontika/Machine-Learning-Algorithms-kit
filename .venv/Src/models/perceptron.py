@@ -11,8 +11,7 @@
        Activation function to use ('step' or 'sign').
    input_dim : int
        The number of input dimensions (excluding the bias term).
-
-    """
+"""
 
 import numpy as np
 
