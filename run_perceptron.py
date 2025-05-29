@@ -58,6 +58,7 @@ def run_task_1_ii():  # 1-ii-a and 1-ii-b (3D classification)
 
     print("\n=== Task 1-ii-b: 3D Recall Phase ===")
     plot_test_predictions_3D(model, X_test, y_test)     # Test performance
+    
 
 
 # Run script
