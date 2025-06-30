@@ -1,11 +1,11 @@
 # Import dataset generation functions
-from Src.utils.dataset_generator import generate_2D_linear_separable, generate_3D_linear_separable
+from src.utils.dataset_generator import generate_2D_linear_separable, generate_3D_linear_separable
 
 # Import your custom Perceptron model
-from Src.models.perceptron import Perceptron
+from src.models.perceptron import Perceptron
 
 # Import all the plotting functions for 2D and 3D tasks
-from Src.visualization.perceptron_plots import (
+from src.visualization.perceptron_plots import (
     plot_training_2D_data,
     plot_decision_boundary_2D,
     plot_training_outputs,

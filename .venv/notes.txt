@@ -1,3 +1,4 @@
 * Add GUI
 * Add more choices for activation function (perceptron.py - def activate)
 * Add unit tests
+* Alternatives for OvR Perceptron (Task 1-iii-a: Multiclass Classification of Flowers)
