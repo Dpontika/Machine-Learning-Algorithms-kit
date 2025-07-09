@@ -9,7 +9,7 @@ One-vs-Rest (OvR) strategy:
 
         Model 3: Classify class 2 vs others
 
-    Then during prediction, we’ll run all 3 models and take the one with the strongest score or first activation.  
+    Then during prediction, we' ll run all 3 models and take the one with the strongest score or first activation.  
 
 """
 
