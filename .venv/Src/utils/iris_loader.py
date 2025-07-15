@@ -29,7 +29,7 @@ def load_iris_data(test_size=0.2, random_state=42):
     # Split into training set and test set
     X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=test_size, random_state=random_state)
 
-    return X_train, X_test, y_train, y_test
+    return X_train.values, X_test.values, y_train, y_test
 
     #return X_train, X_test, y_train, y_test, X, y, y_encoded, label_encoder
 

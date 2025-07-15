@@ -61,8 +61,7 @@ def plot_true_classes(X_train, y_train):
     plt.tight_layout()
     plt.show()
 
-    
- 
+
 # Graph 2   
 def plot_predicted_classes(X_train, y_pred):
     """

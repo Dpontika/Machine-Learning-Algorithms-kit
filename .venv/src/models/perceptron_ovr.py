@@ -78,7 +78,7 @@ class PerceptronOvR:
         
         for i,model in enumerate(self.models):
             prediction = model.predict(x)
-            outputs = outputs.append(prediction)
+            outputs.append(prediction)
             
         # Return the index of the highest prediction
         return int(np.argmax(outputs))
