@@ -1,5 +1,5 @@
 """
-Multiclass classification (3 classes - Iris dataset) plots in 2D using:
+Multiclass classification (3 classes - Iris dataset) plots in 2D using (Task 1-iii-a):
 
     X-axis: Feature 1 → sepal length
 
@@ -7,17 +7,20 @@ Multiclass classification (3 classes - Iris dataset) plots in 2D using:
 
     (Column indices 0 and 2 in the data.)
     
-Graph 1: True training samples by class
+Graph 1-iii-a: True training samples by class
 
-Graph 2: Predicted training classes 
+Graph 2-iii-a: Predicted training classes 
 
-Graphs 3, 4, 5:	For each class-specific Perceptron, plot its binary outputs over training data (activation: 0/1), 
+Graphs 3-iii-a, 4-iii-a, 5-iii-a:	For each class-specific Perceptron, plot its binary outputs over training data (activation: 0/1), 
 showing how well it separates its class from the rest
+
 
 """
 import matplotlib.pyplot as plt 
 
-# Graph 1
+
+
+# Graph 1-iii-a
 def plot_true_classes(X_train, y_train):
     """
     Plot the true class labels of the Iris training data in 2D,
@@ -62,7 +65,7 @@ def plot_true_classes(X_train, y_train):
     plt.show()
 
 
-# Graph 2   
+# Graph 2-iii-a   
 def plot_predicted_classes(X_train, y_pred):
     """
     Plot the predicted class labels for the training samples in 2D,
@@ -101,7 +104,7 @@ def plot_predicted_classes(X_train, y_pred):
     plt.tight_layout()
     plt.show()
 
-# Graph 3,4,5    
+# Graph 3-iii-a,4-iii-a,5-iii-a    
 def plot_perceptron_outputs(model, X_train, y_train):
     """
     Plot 3 graphs, one for each binary Perceptron in the OvR model.
@@ -140,6 +143,41 @@ def plot_perceptron_outputs(model, X_train, y_train):
         
     plt.tight_layout()
     plt.show()
-        
-        
     
+"""
+============================================================================
+ === Visual comparison of true vs predicted class labels on the test set (Task 1-iii-b) ===
+
+Graph 1-iii-b:For each class-specific Perceptron, plot its binary outputs over training data 
+(activation: 0/1), showing how well it separates its class from the rest
+=============================================================================
+
+"""
+    
+# Graph 1-iii-b, 2-iii-b, 3-iii-b
+def plot_test_predictions_vs_true(y_true, y_pred):
+    """
+    Visual comparison of true vs predicted class labels on the test set.
+
+    This plot shows:
+    - Blue dots: The actual (true) class labels
+    - Red crosses: The predicted class labels by the PerceptronOvR model
+
+    Parameters:
+    - y_true: List or array of true class labels (0, 1, 2)
+    - y_pred: List or array of predicted class labels (0, 1, 2)
+    """
+    sample_indices=list(range(len(y_true)))
+    
+    # True labels
+    plt.scatter(sample_indices, y_true, color='blue', marker='o', label='True Labels')
+        
+    # Predicted labels
+    plt.scatter(sample_indices, y_pred, color='red', marker='x', label='Predicted Labesl')    
+        
+    plt.title("1-iii-b: Test predictions vs True Labels")
+    plt.xlabel("Test Sample Index")
+    plt.ylabel("Class label (0 = Setosa, 1 = Versicolor, 2 = Virginica)")
+    plt.legend
+    plt.grid(True)
+    plt.show()

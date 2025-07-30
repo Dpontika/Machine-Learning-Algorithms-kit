@@ -95,7 +95,7 @@ class PerceptronOvR:
         """
         predictions=[]
         
-        for i in X:
+        for x in X:
             predicted_class=self.predict(x)
             predictions.append(predicted_class)
             
