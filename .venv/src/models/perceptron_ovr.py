@@ -50,7 +50,7 @@ class PerceptronOvR:
         
         for i in range(self.num_classes):
             
-            print(f"\Training model for class {i} vs rest")
+            print(f"Training model for class {i} vs rest")
             #Covert labels to binary
             binary_labels=[]
             for label in y_train:
